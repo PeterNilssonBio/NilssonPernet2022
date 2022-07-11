@@ -1,0 +1,212 @@
+default:
+  # == FILE AND NETWORK PATHS == #
+  # -- Local Files -- #
+  # All file system paths are relative to "main.R".
+  data_directory:       "data/"
+  output_directory:     "output/"
+  morphometrics_name:   "density_morphometrics"
+  count_control_name:   "density_counts"
+  data_extension:       ".csv"
+  figure_2_name:        "Fig_2"
+  figure_3_name:        "Fig_3"
+  figure_4_name:        "Fig_4"
+  figure_5_name:        "Fig_5"
+  figure_S1_name:       "Fig_S1"
+  figure_extension:     ".svg"    # This will also determine the output format.
+  table_1_name:         "Table_1"
+  table_2_name:         "Table_2"
+  table_S1_name:        "Table_S1"
+  table_S2_name:        "Table_S2"
+  table_S3_name:        "Table_S3"
+  table_S4_name:        "Table_S4"
+  table_S5_name:        "Table_S5"
+  count_table_name:     "Count_Control_Table"
+  table_extension:      ".html"   # This will also determine the output format.
+
+
+  # -- Remote Files and Local Paths to Store Them -- #
+  # NB: As the file is not yet on the database, the URL here is just an
+  #     educated guess.
+  database_path_prefix:             "http://dmoserv3.bco-dmo.org/jg/serv/BCO-DMO/LIPs_on_Larval_Feeding/"
+  database_path_suffix:             ".flat0?"
+  download_morphometrics:           true
+  download_count_control:           true
+  overwrite_on_download:            false
+  morphometrics_min_expected_bytes: 500 # Probably >60K, but use lower limit in case compressed or something.
+  count_control_min_expected_bytes: 500 # Probably ~2K, but use lower limit in case compressed or something.
+
+
+
+  # == OUTPUT SELECTION == #
+  # These settings control which figures and tables should be generated.
+  # NB: There is no Figure 1 in this list as it is an illustration, not a plot.
+  make_figure_2:    true
+  make_figure_3:    true
+  make_figure_4:    true
+  make_figure_5:    true
+  make_figure_S1:   true
+
+  make_table_1:     true
+  make_table_2:     true
+  make_table_S1:    true
+  make_table_S2:    true
+  make_table_S3:    true
+  make_table_S4:    true
+  make_table_S5:    true
+  make_count_table: true
+
+  # -- Post Processing Options -- #
+  postprocess:          true  # Runs Python script to pretty up the output.
+  postprocess_suffix:   ""    # If empty, overwrite original with pretty output.
+  postprocess_soup:     true  # Use bs4 Beautiful Soup module.
+
+
+
+  # == INPUT FORMAT == #
+  # -- CSV Column Names -- #
+  col_spawn_date:             "Spawn_date"
+  col_species:                "Species"
+  col_experiment:             "Experiment"
+  col_beaker:                 "Beaker"
+  col_density:                "Culture_density"
+  col_food:                   "Food"
+  col_bl:                     "Midline_body_length"
+  col_po:                     "Right_PO_arm_length"
+  col_sl:                     "Stomach_length"
+  col_age:                    "Age"
+  col_stage:                  "Stage"
+  col_image:                  "Image"
+  col_counted:                "Larvae_counted"
+  col_expected:               "Larvae_expected"
+
+
+  # -- CSV Factor Levels. -- #
+  species_level_dend:         "Dendraster excentricus"
+  species_level_lyt:          "Lytechinus pictus"
+  experiment_level_dend1:     "D. excentricus Expt 1"
+  experiment_level_dend2:     "D. excentricus Expt 2"
+  experiment_level_lyt1:      "L. pictus Expt 1"
+  experiment_level_lyt2:      "L. pictus Expt 2"
+  density_level_extrasparse:  "0.015"
+  density_level_sparse:       "0.05"
+  density_level_dense:        "0.25"
+  food_level_low:             "250"
+  food_level_high:            "5000"
+
+
+  # == ANALYSIS SETTINGS == #
+  # Threshold values for statistical tests.
+  shapiro_p:                  0.05
+  levene_p:                   0.05
+  anova_p:                    0.05
+
+
+
+  # == OUTPUT FORMAT == #
+  # -- Display Names for Plot Legends, Table Headers, etc. -- #
+  spawn_date_label_col_header:  "Spawn Date"
+  proportion_label_col_header:  "Proportion of Nominal"
+  species_label_col_header:     "Species"
+  experiment_label_col_header:  "Experiment"
+
+  experiment_label_dend1:     "D. excentricus Expt 1"
+  experiment_label_dend2:     "D. excentricus Expt 2"
+  experiment_label_lyt1:      "L. pictus Expt 1"
+  experiment_label_lyt2:      "L. pictus Expt 2"
+
+  density_label_extrasparse:  "0.015"
+  density_label_sparse:       "0.05"
+  density_label_dense:        "0.25"
+  density_label_legend:       "Density (larvae/ml)"
+  density_label_col_header:   "Culture Density (larvae/ml)"
+
+  food_label_low:             "250"
+  food_label_high:            "5,000"
+  food_label_legend:          "Food (cells/ml)"
+  food_label_col_header:      "Food Ration (cells/ml)"
+
+  po_label:                   "PORL (μm)"
+  po_label_no_units:          "PORL"
+  po_emm_label:               "EMM for PORL (μm)"
+  po_lmem_label:              "LMEM for PORL (μm)"
+  po_bl_ratio_label:          "PORL/BL"
+  sl_label:                   "SL (μm)"
+  sl_label_no_units:          "SL"
+  sl_emm_label:               "EMM for SL (μm)"
+  bl_emm_label:               "EMM for BL (μm)"
+  sl_lmem_label:              "LMEM for SL (μm)"
+  sl_bl_ratio_label:          "SL/BL"
+  bl_label:                   "BL (μm)"
+
+
+
+  # -- Graphical Representations: Color, Fill, and Shape -- #
+  food_color_low:             "#ffffff" # White.
+  food_color_high:            "#6081bf" # Blue.
+
+  density_shape_extrasparse:  25        # ▼ Downward-facing triangle, filled.
+  density_shape_sparse:       21        # ● Circle, filled.
+  density_shape_dense:        24        # ▲ Upward-facing triangle, filled.
+  density_shape_size:         3
+  density_stroke:             1         # Slightly thicker stroke width.
+  density_line_color:         "#000000" # Black.
+
+  error_bar_color:            "#000000" # Black.
+
+
+  # -- Plot Axis Scales -- #
+  figure_2_bl_y_max:            400
+  figure_2_po_y_max:            410
+  figure_2_sl_y_max:            150
+  figure_3_y_max:               450
+  figure_4_y_max:               150
+  figure_S1_po_bl_ratio_y_max:  1.7
+  figure_S1_sl_bl_ratio_y_max:  0.5
+
+
+  # -- Plot Element Positioning -- #
+  figure_2_bar_dodge:           0.8
+  figure_3_4_bar_dodge:         0.8
+  figure_S1_bar_dodge:          0.8
+
+  # Height of stars/p-values relative to bar height.
+  figure_2_star_height_mult:    1.05
+  figure_3_4_p_height_mult:     1.05
+  figure_S1_height_mult:        1.05
+
+  figure_3_4_error_width:       0.2
+  figure_S1_error_width:        0.2
+
+  figure_5_legend_spacing_mm:   1.0       # Squish legends to fit.
+
+
+  # -- Plot Output File Dimensions --#
+  # These are based on MEPS guidelines.
+  figure_2_width_mm:          169
+  figure_2_height_mm:         169
+  figure_3_width_mm:          169
+  figure_3_height_mm:         88.556
+  figure_4_width_mm:          169
+  figure_4_height_mm:         88.556
+  figure_5_width_mm:          169
+  figure_5_height_mm:         88.556
+  figure_S1_width_mm:         169
+  figure_S1_height_mm:        169
+  p_value_font_size:          3         # 3.88 is ggpubr default. Units = ??
+
+
+  # -- Number/Star Formatting -- #
+  p_value_nsmall:             3         # Digits past zero to show.
+  p_value_max_cutoff:         0.05      # Don't print p >= this.
+  p_value_min_cutoff:         0.001     # Print p < this as "p<(p_value_min_cutoff)".
+  table_digits:               3
+  p_star_cut_triple:          0.001
+  p_star_cut_double:          0.01
+  p_star_cut_single:          0.05
+
+
+
+  # == CONSOLE OUTPUT == #
+  warn_singular:              false     # Print warnings for singular LMEMs.
+  warn_multcomp:              false     # Print warnings from multcomp.
+  break_on_warning:           false

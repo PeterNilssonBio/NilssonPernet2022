@@ -22,7 +22,7 @@ To run this script, you need...
 
   2. [Python](https://www.python.org/downloads/) (version ≥ 3.8), along with the [Beautiful Soup 4](https://pypi.org/project/beautifulsoup4/) package.
 
-  3. The two data files, which are stored in the Biological & Chemical Oceanography Data Management Office database as part of an NSF-funded [project](https://www.bco-dmo.org/project/727167). At the time of writing, the URLs at which this data will be located are not known, but the script will attempt to download them automatically. Should that fail, simply obtain the data files and place them in a subdirectory named "data" like this:
+  3. The two data files, which are stored in the Biological & Chemical Oceanography Data Management Office database as part of an NSF-funded [project](https://www.bco-dmo.org/project/727167). At the time of writing, the URLs at which this data will be located are not known, but the script will attempt to download them automatically. Should that fail, simply obtain the data files and place them in a subdirectory named `data` like this:
         ```
         NilssonPernet2022/
         ├── data/

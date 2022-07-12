@@ -1,4 +1,7 @@
+# This file contains the logic for loading dependencies, settings,
+# and data.
 # source() this file with chdir = T.
+
 .r_libraries <- c(
   "config",
   "emmeans",

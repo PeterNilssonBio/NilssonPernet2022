@@ -1,3 +1,5 @@
+# This file contains logic used by multiple figure creation functions.
+
 # Get the name that emmeans::contrast will use to high vs low food within the
 # 0.015 larvae/ml density.
 #

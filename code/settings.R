@@ -1,3 +1,9 @@
+# This file contains functions for accessing settings derived from
+# config.yml. Its main purpose is to make debugging easier by
+# failing immediately if a property is missing, rather than silently
+# returning NULL and letting things go wrong at some point way later
+# in the program execution.
+
 # Global settings object. Access through settings() function.
 .settings <- list()
 

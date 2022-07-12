@@ -1,3 +1,5 @@
+# This file contains logic used for saving figures to file.
+
 # Return path for a given plot file name.
 #
 # Parameters

@@ -1,3 +1,5 @@
+# This is the top-level file that runs all other code.
+#
 # To create all the figures and tables, run this line in R:
 #   source("main.R")
 #

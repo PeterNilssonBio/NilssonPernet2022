@@ -1,3 +1,5 @@
+# This file contains logic used for saving tables to files.
+
 # Return path for a given table file name.
 #
 # Parameters

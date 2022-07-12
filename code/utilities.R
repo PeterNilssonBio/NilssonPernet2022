@@ -1,3 +1,5 @@
+# This file contains miscellaneous helper functions.
+
 combine_tables <- function(tables) {
   if (length(tables) == 0) {
     return(tables)

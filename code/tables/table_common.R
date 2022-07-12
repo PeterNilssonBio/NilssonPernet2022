@@ -1,3 +1,5 @@
+# This file contains logic used by multiple table creation functions.
+
 render_kable <- function(anova_obj, caption = NULL) {
   anova_obj %>%
     kableExtra::kbl(

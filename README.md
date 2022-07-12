@@ -43,5 +43,16 @@ source("main.R")
 
 This should generate HTML output files for each of seven tables (Tables 1-2, S1-S5) and SVG output files for each of five figures (Figures 2-5, S1). It will also generate an HTML output file containing a small table of data on count control larvae, which is summarized in prose in the paper. You can customize the output by editing the `config.yml` file. Note that there is no output for Figure 1 because that figure is simply an illustration and is not generated from the data.
 
+Output files are put in a directory named `output`:
+```
+NilssonPernet2022/
+├── output/
+│   ├── Fig_2.svg
+│   ├── Fig_3.svg
+│   └── (various other output files...)
+├── main.R
+└── (various other files and directories...)
+```
+
 ## References
 Nilsson P, Pernet B (2022) Echinoid larvae can express food-conditioned morphological plasticity at ecologically relevant culture densities. Marine Ecology Progress Series 694 (in press).
